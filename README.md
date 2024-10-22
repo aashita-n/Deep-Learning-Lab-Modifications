@@ -4,18 +4,23 @@
 
 This project implements a perceptron model to perform the XOR operation on multi-bit binary numbers. The primary function is designed to take two binary inputs of equal length and compute their bitwise XOR using a simple neural network model.
 
-
 ## Code Explanation
 
 The implementation consists of several functions:
 
-1. **unitStep(v)**: A basic activation function that returns `1` if `v` is greater than or equal to `0`, otherwise returns `0`.
+- **unitStep(v)**: A basic activation function that returns 1 if `v` is greater than or equal to 0; otherwise, it returns 0.
 
-2. **perceptronModel(x, w, b)**: A function that calculates the output of a perceptron model based on the input vector `x`, weights `w`, and bias `b`.
+- **perceptronModel(x, w, b)**: A function that calculates the output of a perceptron model based on the input vector `x`, weights `w`, and bias `b`.
 
-3. **XOR_bit(x)**: This function applies the perceptron model to perform the XOR operation for a single pair of binary inputs.
+- **NOT_logicFunction(x)**: Returns the NOT of the input using a perceptron.
 
-4. **multiBitXOR(a, b)**: This function takes two binary arrays of equal length, computes the XOR for each corresponding bit using the `XOR_bit` function, and returns the result as an array.
+- **AND_logicFunction(x)**: Returns the AND of the input using a perceptron.
+
+- **OR_logicFunction(x)**: Returns the OR of the input using a perceptron.
+
+- **XOR_logicFunction(x)**: Computes XOR for two binary inputs using AND, OR, and NOT functions.
+
+- **multiBitXOR(a, b)**: This function takes two binary arrays of equal length, computes the XOR for each corresponding bit using the `XOR_logicFunction`, and returns the result as an array.
 
 ## Example Usage
 
@@ -36,10 +41,15 @@ print("XOR of {} and {} = {}".format(a, b, multiBitXOR(a, b)))
 print("XOR of {} and {} = {}".format(c, d, multiBitXOR(c, d)))
 
 ```
-## Output
+
+## Output 
 
 ```python
 XOR of [1 0 1] and [0 1 1] = [1. 1. 0.]
 XOR of [1 0 1 0] and [1 1 0 1] = [0. 1. 1. 1.]
+
 ```
+
+
+
 
